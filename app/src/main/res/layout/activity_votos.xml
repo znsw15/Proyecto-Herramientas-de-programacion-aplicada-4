@@ -6,4 +6,90 @@
     android:layout_height="match_parent"
     tools:context=".Votos">
 
+    <TextView
+        android:id="@+id/tv2"
+        android:layout_width="296dp"
+        android:layout_height="69dp"
+        android:text="Resultados"
+        android:textAlignment="center"
+        android:textColor="#000000"
+        android:textSize="48sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.53"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.023" />
+
+    <LinearLayout
+        android:layout_width="119dp"
+        android:layout_height="585dp"
+        android:layout_marginTop="2dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.053"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0">
+
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="match_parent"
+            android:layout_height="136dp"
+            app:srcCompat="@drawable/img1" />
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="match_parent"
+            android:layout_height="137dp"
+            app:srcCompat="@drawable/img3" />
+
+        <ImageView
+            android:id="@+id/imageView4"
+            android:layout_width="match_parent"
+            android:layout_height="133dp"
+            app:srcCompat="@drawable/img4" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tvres1"
+        android:layout_width="203dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="191dp"
+        android:layout_marginBottom="495dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.817"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/tvres2"
+        android:layout_width="203dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="312dp"
+        android:layout_marginBottom="374dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.817"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <TextView
+        android:id="@+id/tvres3"
+        android:layout_width="203dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="468dp"
+        android:layout_marginBottom="218dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.817"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
