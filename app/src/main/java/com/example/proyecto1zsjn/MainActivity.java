@@ -4,7 +4,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
@@ -46,10 +45,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void llenarUsuario(){
 
         listaUsuario = new ArrayList<Usuario>();
-        listaUsuario.add(new Usuario("08-0939-001578" ));
-        listaUsuario.add(new Usuario("03-0742-002055"));
-        listaUsuario.add(new Usuario("08-0944-000327"));
-        listaUsuario.add(new Usuario("03-0740-001394"));
+        listaUsuario.add(new Usuario("8-939-1578", "Julio Navas"));
+        listaUsuario.add(new Usuario("03-0742-002055", "Zulixa Salas"));
+        listaUsuario.add(new Usuario("08-0944-000327","EDWIN ARROCHA" ));
+       /* listaUsuario.add(new Usuario("03-0740-001394"));
         listaUsuario.add(new Usuario("20-0053-004282"));
         listaUsuario.add(new Usuario("08-0943-001867"));
         listaUsuario.add(new Usuario("08-0937-000503"));
@@ -58,7 +57,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         listaUsuario.add(new Usuario("08-0986-000549"));
         listaUsuario.add(new Usuario("08-0957-001827"));
         listaUsuario.add(new Usuario("08-0940-001311"));
-        listaUsuario.add(new Usuario("08-0863-001620"));
+        listaUsuario.add(new Usuario("08-0863-001620"));*/
     }
 
     @Override
