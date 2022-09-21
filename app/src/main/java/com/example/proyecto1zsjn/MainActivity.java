@@ -2,12 +2,12 @@ package com.example.proyecto1zsjn;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
-import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.Button;
@@ -40,11 +40,42 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     }
 
-    private void listaUsuario(){
+    private void llenarUsuario(){
 
         listaUsuario = new ArrayList<Usuario>();
-        listaUsuario.add(new Usuario("8-939-1578"));
-        listaUsuario.add(new Usuario("3-742-2055"));
+        listaUsuario.add(new Usuario("08-0939-001578"));
+        listaUsuario.add(new Usuario("03-0742-002055"));
+        listaUsuario.add(new Usuario("08-0944-000327"));
+        listaUsuario.add(new Usuario("03-0740-001394"));
+        listaUsuario.add(new Usuario("20-0053-004282"));
+        listaUsuario.add(new Usuario("08-0943-001867"));
+        listaUsuario.add(new Usuario("08-0937-000503"));
+        listaUsuario.add(new Usuario("08-0952-002444"));
+        listaUsuario.add(new Usuario("08-0943-000012"));
+        listaUsuario.add(new Usuario("08-0986-000549"));
+        listaUsuario.add(new Usuario("08-0957-001827"));
+        listaUsuario.add(new Usuario("08-0940-001311"));
+        listaUsuario.add(new Usuario("08-0863-001620"));
+    }
+
+    private void iniciarSesion(){
+
+        llenarUsuario();
+        String cedula = etcedula.getText().toString();
+        boolean usuarioEncontrado = false;
+        for (int i = 0; i< listaUsuario.size(); i++){
+
+            if(cedula.equals(listaUsuario.get(i).getCedula())){
+
+                usuarioEncontrado = true;
+                Intent inicio = new Intent(MainActivity.this,Eleccion.class);
+                startActivity(inicio);
+            }else if(cedula.isEmpty()){
+                Toast.makeText(this, "Llene el campo", Toast.LENGTH_SHORT).show();
+            }
+        }
+
+
     }
 
     @Override
