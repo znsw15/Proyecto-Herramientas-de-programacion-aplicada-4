@@ -1,4 +1,4 @@
-package com.example.proyecto1zsjn.modelo;
+package com.example.proyecto1zsjn;
 
 import java.io.Serializable;
 

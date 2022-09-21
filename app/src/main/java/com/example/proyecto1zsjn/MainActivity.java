@@ -1,69 +1,52 @@
 package com.example.proyecto1zsjn;
 
-import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Intent;
+import androidx.appcompat.app.AppCompatActivity;
+import android.content.Context;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.ArrayAdapter;
-import android.widget.EditText;
-import android.widget.Toast;
 import android.widget.Button;
-
-import com.example.proyecto1zsjn.modelo.Usuario;
+import android.widget.EditText;
+import android.widget.TextView;
+import android.content.Intent;
 
 import java.util.ArrayList;
 
-public class MainActivity extends AppCompatActivity /*implements View.OnClickListener*/ {
-
-
-    private EditText etcedula;
-    private Button btn1;
-    private ArrayList<Usuario>listaUsuario;
+public class MainActivity extends AppCompatActivity {
+    EditText etcedula;
+    Button btn1;
+    ArrayList<Usuario>listaUsuario;
     private Usuario objUsuario;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-       // getSupportActionBar().hide();
-       // ini();
         etcedula = findViewById(R.id.etcedula);
-        btn1 = findViewById(R.id.btn1);
+        btn1=findViewById(R.id.btn1);
+
+
         btn1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //Intent intent = new Intent(MainActivity.this, Eleccion.class);
-                //startActivity(intent);
                 llenarUsuario();
                 String cedula = etcedula.getText().toString();
                 boolean usuarioEncontrado = false;
-                for (int i = 0; i< listaUsuario.size(); i++){
+                for (int i = 0; i< listaUsuario.size(); i++) {
 
-                    if(cedula.equals(listaUsuario.get(i).getCedula())){
+                    if (cedula.equals(listaUsuario.get(i).getCedula())) {
                         //Toast.makeText(this, "Bienvenido" + listaUsuario.get(i).getNombre(), Toast.LENGTH_SHORT).show();
                         usuarioEncontrado = true;
-                        Intent inicio = new Intent(MainActivity.this,Eleccion.class);
-                        startActivity(inicio);
+                        //Intent inicio = new Intent(MainActivity.this,Eleccion.class);
+                        //startActivity(inicio);
                     }else if(cedula.isEmpty()){
                         //Toast.makeText(this, "Llene el campo", Toast.LENGTH_SHORT).show();
                     }else if(!usuarioEncontrado){
                         //Toast.makeText(this, "La cedula no es válida", Toast.LENGTH_SHORT).show();
                     }
                 }
-
-            }
-        });
-
-
-    }
-    /*public void ini(){
-        etcedula = findViewById(R.id.etcedula);
-        btn1 = findViewById(R.id.btn1);
-        btn1.setOnClickListener(this);
-
-    }*/
-
+                Intent intent = new Intent(getApplicationContext(), Eleccion.class);
+                startActivity(intent);
+            }});}
     public void llenarUsuario(){
 
         listaUsuario = new ArrayList<Usuario>();
@@ -80,27 +63,4 @@ public class MainActivity extends AppCompatActivity /*implements View.OnClickLis
         listaUsuario.add(new Usuario("08-0957-001827"));
         listaUsuario.add(new Usuario("08-0940-001311"));
         listaUsuario.add(new Usuario("08-0863-001620"));*/
-    }
-
-   /* private void iniciarSesion() {
-        llenarUsuario();
-        String cedula = etcedula.getText().toString();
-        boolean usuarioEncontrado = false;
-        for (int i = 0; i< listaUsuario.size(); i++){
-
-            if(cedula.equals(listaUsuario.get(i).getCedula())){
-                Toast.makeText(this, "Bienvenido" + listaUsuario.get(i).getNombre(), Toast.LENGTH_SHORT).show();
-                usuarioEncontrado = true;
-                Intent inicio = new Intent(MainActivity.this,Eleccion.class);
-                startActivity(inicio);
-            }else if(cedula.isEmpty()){
-                Toast.makeText(this, "Llene el campo", Toast.LENGTH_SHORT).show();
-            }else if(!usuarioEncontrado){
-                Toast.makeText(this, "La cedula no es válida", Toast.LENGTH_SHORT).show();
-            }
-        }
-
-    }*/
-
-
-}
+    }}

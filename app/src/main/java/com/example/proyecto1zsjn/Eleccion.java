@@ -13,13 +13,13 @@ import android.widget.RadioButton;
 
 public class Eleccion extends AppCompatActivity {
     RadioGroup rg;
-    RadioButton rb1, rb2, rb3;
     Button btn1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_eleccion);
+        Intent intent = getIntent();
         rg = findViewById(R.id.rg);
         btn1 = findViewById(R.id.btn1);
 
@@ -48,6 +48,7 @@ public class Eleccion extends AppCompatActivity {
                         // imageView.setImageDrawable(getResources().getDrawable(R.drawable.pineapple));
                         break;
                 }
+
                 Intent intent = new Intent(getApplicationContext(), Votos.class);
                 intent.putExtra("cand1", cand1);
                 intent.putExtra("cand2", cand2);
