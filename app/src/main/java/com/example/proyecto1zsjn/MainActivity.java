@@ -31,6 +31,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         getSupportActionBar().hide();
+        ini();
+
 
     }
     public void ini(){
@@ -72,16 +74,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 startActivity(inicio);
             }else if(cedula.isEmpty()){
                 Toast.makeText(this, "Llene el campo", Toast.LENGTH_SHORT).show();
+            }else if(!usuarioEncontrado){
+                Toast.makeText(this, "La cedula no es válida", Toast.LENGTH_SHORT).show();
             }
         }
-
-
     }
 
     @Override
     public void onClick(View view) {
     if (view.getId()== R.id.btn1){
-        etcedula.setText("");
+        iniciarSesion();
 
     }
     }
