@@ -14,6 +14,12 @@
         android:theme="@style/Theme.Proyecto1ZSJN"
         tools:targetApi="31">
         <activity
+            android:name=".Votos"
+            android:exported="false" />
+        <activity
+            android:name=".Eleccion"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
