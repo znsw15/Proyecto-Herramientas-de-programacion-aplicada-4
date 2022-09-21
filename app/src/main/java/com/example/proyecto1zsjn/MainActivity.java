@@ -60,11 +60,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         listaUsuario.add(new Usuario("08-0863-001620"));
     }
 
-    private void iniciarSesion(){
-
+    @Override
+    public void onClick(View view) {
         llenarUsuario();
         String cedula = etcedula.getText().toString();
         boolean usuarioEncontrado = false;
+    if (view.getId()== R.id.btn1){
+
         for (int i = 0; i< listaUsuario.size(); i++){
 
             if(cedula.equals(listaUsuario.get(i).getCedula())){
@@ -78,12 +80,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 Toast.makeText(this, "La cedula no es válida", Toast.LENGTH_SHORT).show();
             }
         }
-    }
-
-    @Override
-    public void onClick(View view) {
-    if (view.getId()== R.id.btn1){
-        iniciarSesion();
 
     }
     }
