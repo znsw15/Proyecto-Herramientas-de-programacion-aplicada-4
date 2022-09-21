@@ -23,9 +23,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private ArrayList<Usuario>listaUsuario;
     private Usuario objUsuario;
 
-
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -60,29 +57,31 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         listaUsuario.add(new Usuario("08-0863-001620"));*/
     }
 
-    @Override
-    public void onClick(View view) {
+    private void iniciarSesion() {
         llenarUsuario();
         String cedula = etcedula.getText().toString();
         boolean usuarioEncontrado = false;
-        if (view.getId()== R.id.btn1){
+        for (int i = 0; i< listaUsuario.size(); i++){
 
-
-            for (int i = 0; i< listaUsuario.size(); i++){
-
-                if(cedula.equals(listaUsuario.get(i).getCedula())){
-
-                    usuarioEncontrado = true;
-                    Intent inicio = new Intent(MainActivity.this,Eleccion.class);
-                    startActivity(inicio);
-                }else if(cedula.isEmpty()){
-                    Toast.makeText(this, "Llene el campo", Toast.LENGTH_SHORT).show();
-                }else if(!usuarioEncontrado){
-                    Toast.makeText(this, "La cedula no es válida", Toast.LENGTH_SHORT).show();
-                }
+            if(cedula.equals(listaUsuario.get(i).getCedula())){
+                Toast.makeText(this, "Bienvenido" + listaUsuario.get(i).getNombre(), Toast.LENGTH_SHORT).show();
+                usuarioEncontrado = true;
+                Intent inicio = new Intent(MainActivity.this,Eleccion.class);
+                startActivity(inicio);
+            }else if(cedula.isEmpty()){
+                Toast.makeText(this, "Llene el campo", Toast.LENGTH_SHORT).show();
+            }else if(!usuarioEncontrado){
+                Toast.makeText(this, "La cedula no es válida", Toast.LENGTH_SHORT).show();
             }
-            Intent inicio = new Intent(getApplicationContext(), Eleccion.class);
-            startActivity(inicio);
+        }
+
+    }
+
+    @Override
+    public void onClick(View view) {
+        if (view.getId()== R.id.btn1){
+            iniciarSesion();
 
         }
-    }}
+    }
+}

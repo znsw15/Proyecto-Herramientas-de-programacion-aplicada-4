@@ -24,14 +24,14 @@ public class Eleccion extends AppCompatActivity {
         btn1 = findViewById(R.id.btn1);
 
         btn1.setOnClickListener(new View.OnClickListener() {
-                                    @Override
-                                    public void onClick(View view) {
+            @Override
+            public void onClick(View view) {
 
-        rg.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
-            float i = 0;
-            int cand1 = 0;
-            int cand2 = 0;
-            int cand3 = 0;
+                rg.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+                 float i = 0;
+                 int cand1 = 0;
+                 int cand2 = 0;
+                 int cand3 = 0;
             @Override
             public void onCheckedChanged(RadioGroup rg, int checkedId) {
                 switch (checkedId) {
