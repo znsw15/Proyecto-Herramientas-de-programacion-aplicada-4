@@ -20,18 +20,13 @@ public class Votos extends AppCompatActivity {
         tvres2=findViewById(R.id.tvres2);
         tvres3=findViewById(R.id.tvres3);
 
-                Intent intent = getIntent();
-                int cand1 = intent.getIntExtra("cand1", 0);
-                int cand2 = intent.getIntExtra("cand2", 0);
-                int cand3 = intent.getIntExtra("cand3", 0);
+        Usuario.cand1= (Usuario.cand1/39)*100;
+        Usuario.cand2= (Usuario.cand2/39)*100;
+        Usuario.cand3= (Usuario.cand3/39)*100;
 
-                 cand1= (cand1 / 40)*100;
-                 cand2= (cand2 / 40)*100;
-                 cand3= (cand3 / 40)*100;
-
-                tvres1.setText("= "+cand1+"%");
-                tvres2.setText("= "+cand2+"%");
-                tvres3.setText("= "+cand3+"%");
+        tvres1.setText("= "+Usuario.cand1);
+        tvres2.setText("= "+Usuario.cand2);
+        tvres3.setText("= "+Usuario.cand3);
 
         btn1 = findViewById(R.id.btn1);
         btn1.setOnClickListener(new View.OnClickListener() {
@@ -41,6 +36,6 @@ public class Votos extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-            }
+    }
 
-        }
+}
