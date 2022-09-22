@@ -26,8 +26,8 @@
         android:id="@+id/btn2"
         android:layout_width="304dp"
         android:layout_height="63dp"
-        android:layout_marginStart="110dp"
-        android:layout_marginEnd="111dp"
+        android:layout_marginStart="53dp"
+        android:layout_marginEnd="54dp"
         android:backgroundTint="#046E08"
         android:text="Ver Resultados"
         android:textAlignment="center"
@@ -35,24 +35,23 @@
         app:iconTint="#BA3A3A"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.942" />
+        app:layout_constraintTop_toBottomOf="@+id/btn1" />
 
     <EditText
         android:id="@+id/etcedula"
         android:layout_width="283dp"
         android:layout_height="52dp"
+        android:layout_marginTop="455dp"
+        android:layout_marginBottom="224dp"
         android:ems="10"
         android:hint=" Formato: 00-0000-000000"
         android:inputType="textPersonName"
         android:textAlignment="center"
-        app:layout_constraintBottom_toTopOf="@+id/btn1"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/imageView"
-        app:layout_constraintVertical_bias="0.934" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/btn1"
@@ -67,10 +66,9 @@
         app:iconTint="#BA3A3A"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.796" />
+        app:layout_constraintTop_toBottomOf="@+id/etcedula"
+        app:layout_constraintVertical_bias="0.192" />
 
     <TextView
         android:id="@+id/tv"
@@ -93,15 +91,14 @@
         android:id="@+id/imageView"
         android:layout_width="168dp"
         android:layout_height="282dp"
-        android:layout_marginStart="121dp"
-        android:layout_marginEnd="122dp"
+        android:layout_marginStart="123dp"
+        android:layout_marginEnd="120dp"
         android:textAlignment="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.138"
+        app:layout_constraintVertical_bias="0.16"
         app:srcCompat="@drawable/img0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
