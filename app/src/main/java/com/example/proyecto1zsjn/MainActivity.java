@@ -44,12 +44,21 @@ public class MainActivity extends AppCompatActivity {
 
         etcedula = findViewById(R.id.etcedula);
         btn1 = findViewById(R.id.btn1);
+        btn2 = findViewById(R.id.btn2);
+
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), Votos.class);
+                startActivity(intent);
+            }
+        });
         btn1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 boolean valida = false;
                 int estudiante = 40;
-                for(int i = 0; i < 39; i++) {
+                for (int i = 0; i < 39; i++) {
                     /** valida que la cedula este en el vector */
                     if (etcedula.getText().toString().equals(cedulas[i])) {
                         valida = true;
@@ -57,23 +66,14 @@ public class MainActivity extends AppCompatActivity {
                         break;
                     }
                 }
-                if (valida){
+                if (valida) {
                     /** Aqui verifica si ya entro */
                     startActivity(new Intent(MainActivity.this, Eleccion.class));
 
                     Toast.makeText(MainActivity.this, ("Bienvenido " + nombres[estudiante]), Toast.LENGTH_LONG).show();
-                }else{
+                } else {
                     Toast.makeText(MainActivity.this, "Usted ya ha realizado su voto", Toast.LENGTH_SHORT).show();
                 }
-            }
-        });
-
-        btn2 = findViewById(R.id.btn2);
-        btn2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), Votos.class);
-                startActivity(intent);
             }
         });
 

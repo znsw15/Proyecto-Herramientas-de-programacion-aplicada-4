@@ -7,7 +7,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
-import java.text.DecimalFormat;
 
 public class Votos extends AppCompatActivity {
     TextView tvres1,tvres2,tvres3;
@@ -30,9 +29,9 @@ public class Votos extends AppCompatActivity {
                  cand2= (cand2 / 40)*100;
                  cand3= (cand3 / 40)*100;
 
-                tvres1.setText("= "+cand1);
-                tvres2.setText("= "+cand2);
-                tvres3.setText("= "+cand3);
+                tvres1.setText("= "+cand1+"%");
+                tvres2.setText("= "+cand2+"%");
+                tvres3.setText("= "+cand3+"%");
 
         btn1 = findViewById(R.id.btn1);
         btn1.setOnClickListener(new View.OnClickListener() {
