@@ -11,26 +11,27 @@ import android.widget.Toast;
 import android.widget.RadioButton;
 
 public class Eleccion extends AppCompatActivity {
-    RadioGroup  radioGroup;
-    Button botonVoto;
+    /** Variables a utilizar */
+    RadioGroup  rg;
+    Button btn1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_eleccion);
 
-        radioGroup = findViewById(R.id.rg);
-        botonVoto = findViewById(R.id.btn1);
+        rg = findViewById(R.id.rg);
+        btn1 = findViewById(R.id.btn1);
 
-        botonVoto.setOnClickListener(new View.OnClickListener() {
+        btn1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view){
-                int checkedId = radioGroup.getCheckedRadioButtonId();
+                int checkedId = rg.getCheckedRadioButtonId();
                 Intent intent =new Intent(Eleccion.this, Votos.class);
                 if (checkedId == -1) {
                     Toast.makeText(Eleccion.this, "No hay seleccion.", Toast.LENGTH_SHORT).show();
                 }else{
-                    findRadioButton(checkedId);
+                    seleccion(checkedId);
                     startActivity(intent);
                 }
 
@@ -39,7 +40,8 @@ public class Eleccion extends AppCompatActivity {
 
 
     }
-    private void findRadioButton(int checkedId) {
+    /** El checkID se utiliza para verificar si se selecciono un boton y aqui determina cual fue su seleccion */
+    private void seleccion(int checkedId) {
         switch (checkedId) {
             case R.id.rb1:
                 Usuario.cand1++;
