@@ -29,6 +29,10 @@ public class Votos extends AppCompatActivity {
                 int cand2 = intent.getIntExtra("cand2", 0);
                 int cand3 = intent.getIntExtra("cand3", 0);
 
+                 cand1= (cand1 / 40)*100;
+                 cand2= (cand2 / 40)*100;
+                 cand3= (cand3 / 40)*100;
+
                 tvres1.setText("= "+cand1);
                 tvres2.setText("= "+cand2);
                 tvres3.setText("= "+cand3);

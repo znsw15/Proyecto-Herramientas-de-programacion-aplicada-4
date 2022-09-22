@@ -37,15 +37,12 @@ public class Eleccion extends AppCompatActivity {
                 switch (checkedId) {
                     case R.id.rb1:
                         cand1++;
-                        // imageView.setImageDrawable(getResources().getDrawable(R.drawable.mango));
                         break;
                     case R.id.rb2:
                         cand2++;
-                        // imageView.setImageDrawable(getResources().getDrawable(R.drawable.apple));
                         break;
                     case R.id.rb3:
                         cand3++;
-                        // imageView.setImageDrawable(getResources().getDrawable(R.drawable.pineapple));
                         break;
                 }
 
