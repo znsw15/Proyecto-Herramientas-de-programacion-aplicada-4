@@ -12,7 +12,6 @@ import android.widget.Toast;
 
 import java.text.DecimalFormat;
 
-
 public class Votos extends AppCompatActivity {
     TextView tvres1,tvres2,tvres3;
 

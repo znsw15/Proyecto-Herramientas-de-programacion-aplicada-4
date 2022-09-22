@@ -7,10 +7,6 @@ public class Usuario implements Serializable {
     private String cedula;
     private String nombre;
 
-    public Usuario() {
-
-    }
-
     public Usuario(String cedula, String nombre) {
         this.cedula = cedula;
         this.nombre = nombre;

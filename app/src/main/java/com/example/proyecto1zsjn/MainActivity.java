@@ -1,78 +1,75 @@
 package com.example.proyecto1zsjn;
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.app.Activity;
+import android.content.Context;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
+import android.content.Intent;
+import android.widget.Toast;
+
+import java.util.ArrayList;
 
 import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.EditText;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Toast;
 
+public class MainActivity extends AppCompatActivity {
 
-import java.util.ArrayList;
+    EditText etcedula;
+    Button btn1, btn2;
+    String[] vectorCedulas = {"8-944-327", "3-740-1394", "20-53-4282", "8-943-1867", "8-937-503", "8-952-2444", "8-943-12", "8-986-549", "8-957-1827", "8-940-1311", "8-863-1620", "8-964-691", "8-954-1126", "8-1039-1537", "8-925-1168", "8-940-1505", "8-938-925", "3-743-2493",          "E-8-169755", "8-971-1811", "8-940-408", "8-937-1640", "8-939-1578", "8-942-1406", "6-722-724", "8-941-1215", "8-962-1218", "8-941-924",            "8-980-2414", "3-742-2055", "8-942-1192", "8-904-1189", "8-959-857", "8-964-1554", "8-1066-1018", "8-1055-701", "8-970-242", "3-752-1461",          "3-745-950"};
+    String[] vectorNombres = {"Edwin Arrocha", "Michelle Brenes", "Eddy Bustamante", "Alejandra Caballero", "Gabriel Chiari", "Kevin Coronado", "Luis    Delgado", "Marc Dudley", "Diego Fernandez", "María Flores", "Donaldo Frazer", "Miguel Gascón", "Andrew Gonzalez", "Valerie Hernández", "Tommy      Ho", "Jean Jiménez", "Felipe Loo", "Lisseth Mcdonald", "Jesus Monagas", "Diana Moreno", "Gerardo Moreno", "Juan Navarro", "Julio Navas", "Anel      Pinzón", "Janiel Pinzón", "Antonio Qiu", "Carlos Ricord", "David Rios", "Sergio Rodriguez", "Zulixa Salas", "Luis Samaniego", "Ary Sánchez",        "Dionisio Santos", "Bryan Thomas", "Carlos Tuñón", "Genesis Vitale", "Fernando Zeng", "Carlos Zhong", "Eimy Guerra"};
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener{
-    private EditText etcedula;
-    private Button btn1;
-    private ArrayList<Usuario> listaUsuario;
-    private Usuario objUsuario;
-
-    public MainActivity(Usuario objUsuario) {
-        this.objUsuario = objUsuario;
-    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        getSupportActionBar().hide();
-        ini();
-    }
 
-    public void ini ()
-    {
-        etcedula = (EditText) findViewById(R.id.etcedula);
-        btn1=(Button) findViewById(R.id.btn1);
-        btn1.setOnClickListener(this);
-    }
-    public void llenarUsuario() {
+        etcedula = findViewById(R.id.etcedula);
+        btn1 = findViewById(R.id.btn1);
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                boolean flag = false;
+                int estudiante = 40;
+                for(int i = 0; i < 39; i++) {
+                    /** valida que la cedula este en el vector */
+                    if (etcedula.getText().toString().equals(vectorCedulas[i])) {
+                        flag = true;
+                        estudiante = i;
+                        break;
+                    }
+                }
+                if (flag){
+                    /** al estar la cedula en el vector entra en la actividad */
+                    startActivity(new Intent(MainActivity.this, Eleccion.class));
 
-        listaUsuario = new ArrayList<Usuario>();
-        listaUsuario.add(new Usuario("08-0939-001578", "Julio Navas" ));
-        listaUsuario.add(new Usuario("03-0742-002055", "Zulixa Salas"));
-        listaUsuario.add(new Usuario("08-0944-000327", "EDWIN ARROCHA"));
-    }
+                    Toast.makeText(MainActivity.this, ("Bienvenido " + vectorNombres[estudiante]), Toast.LENGTH_LONG).show();
+                }else{
+                    Toast.makeText(MainActivity.this, "Usted ya ha realizado su voto", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
 
-    private void iniciarSesion()
-    {
-        llenarUsuario();
-        String cedula = etcedula.getText().toString();
-        boolean usuarioEncontrado = false;
-        for (int i=0; i< listaUsuario.size(); i++)
-        {
-            if (cedula.equals(listaUsuario.get(i).getCedula()))
-            {
-                Toast.makeText(this, "Bienvenido" + listaUsuario.get(i).getNombre(), Toast.LENGTH_SHORT).show();
-                usuarioEncontrado = true;
-                Intent intent = new Intent(MainActivity.this, Eleccion.class);
+        btn2 = findViewById(R.id.btn2);
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), Votos.class);
                 startActivity(intent);
-                objUsuario = listaUsuario.get(i);
-                intent.putExtra("Usuario", objUsuario);
             }
-            else if (cedula.isEmpty())
-            {
-                Toast.makeText(this, "Llenar el campo", Toast.LENGTH_SHORT).show();
-            }
-        }
-        if(!usuarioEncontrado)
-        {
-            Toast.makeText(this, "Cedula invalida", Toast.LENGTH_SHORT).show();
-        }
-    }
+        });
 
-    @Override
-    public void onClick(View view) {
-        if(view.getId() == R.id.btn1){
-            iniciarSesion();
-        }
-    }}
+    }
+}
+
