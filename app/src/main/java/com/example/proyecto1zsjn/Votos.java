@@ -6,14 +6,12 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
-
 import java.text.DecimalFormat;
 
 public class Votos extends AppCompatActivity {
     TextView tvres1,tvres2,tvres3;
+    Button btn1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,5 +34,14 @@ public class Votos extends AppCompatActivity {
                 tvres2.setText("= "+cand2);
                 tvres3.setText("= "+cand3);
 
+        btn1 = findViewById(R.id.btn1);
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                startActivity(intent);
             }
+        });
+            }
+
         }

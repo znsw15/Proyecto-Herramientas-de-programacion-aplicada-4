@@ -10,7 +10,6 @@ import android.widget.RadioGroup;
 import android.widget.Toast;
 import android.widget.RadioButton;
 
-
 public class Eleccion extends AppCompatActivity {
     RadioGroup rg;
     Button btn1;
@@ -26,7 +25,6 @@ public class Eleccion extends AppCompatActivity {
         btn1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
                 rg.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
                  float i = 0;
                  int cand1 = 0;
@@ -45,13 +43,16 @@ public class Eleccion extends AppCompatActivity {
                         cand3++;
                         break;
                 }
-
+                Toast.makeText(Eleccion.this, "Gracias por votar", Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(getApplicationContext(), Votos.class);
                 intent.putExtra("cand1", cand1);
                 intent.putExtra("cand2", cand2);
                 intent.putExtra("cand2", cand3);
                 startActivity(intent);
-            }});}});}}
+            }
+                });
+            }});
+    }}
 
 
 
