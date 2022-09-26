@@ -4,7 +4,7 @@ import java.io.Serializable;
 
 public class Usuario{
 
-    public static int cand1=0, cand2=0, cand3=0;
+    public static int cand1, cand2, cand3;
 
 
     public Usuario(){
