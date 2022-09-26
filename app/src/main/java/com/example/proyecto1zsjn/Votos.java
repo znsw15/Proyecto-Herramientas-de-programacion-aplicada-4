@@ -24,9 +24,9 @@ public class Votos extends AppCompatActivity {
         Usuario.cand2= (Usuario.cand2/39)*100;
         Usuario.cand3= (Usuario.cand3/39)*100;
 
-        tvres1.setText("= "+Usuario.cand1);
-        tvres2.setText("= "+Usuario.cand2);
-        tvres3.setText("= "+Usuario.cand3);
+        tvres1.setText("= "+Usuario.cand1 +"%");
+        tvres2.setText("= "+Usuario.cand2 +"%");
+        tvres3.setText("= "+Usuario.cand3 +"%");
 
         btn1 = findViewById(R.id.btn1);
         btn1.setOnClickListener(new View.OnClickListener() {
