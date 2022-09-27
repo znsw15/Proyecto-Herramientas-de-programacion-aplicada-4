@@ -39,7 +39,6 @@ public class Eleccion extends AppCompatActivity {
             }
         });
 
-
     }
     private void findRadioButton(int checkedId) {
         switch (checkedId) {

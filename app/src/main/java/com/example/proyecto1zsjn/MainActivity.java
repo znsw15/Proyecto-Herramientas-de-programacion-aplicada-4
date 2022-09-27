@@ -30,7 +30,6 @@ public class MainActivity extends AppCompatActivity {
             "Janiel Pinzón", "Antonio Qiu", "Carlos Ricord", "David Rios", "Sergio Rodriguez", "Zulixa Salas", "Luis Samaniego", "Ary Sánchez","Dionisio Santos",
             "Bryan Thomas", "Carlos Tuñón", "Genesis Vitale", "Fernando Zeng", "Carlos Zhong","Eimy Guerra"};
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -53,12 +52,12 @@ public class MainActivity extends AppCompatActivity {
                     }
                 }
                 if (valida){
-                    /** Cuando entra, este le da la biencenida y menciona su nombre */
+                    /** Cuando entra, este le da la bienvenida y menciona su nombre */
                     startActivity(new Intent(MainActivity.this, Eleccion.class));
                     Toast.makeText(MainActivity.this, ("Bienvenido " + nombres[estudiante]), Toast.LENGTH_LONG).show();
 
                 }else{
-                    Toast.makeText(MainActivity.this, "Usted ya ha realizado su voto", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(MainActivity.this, "Acceso denegado", Toast.LENGTH_SHORT).show();
                 }
             }
         });
