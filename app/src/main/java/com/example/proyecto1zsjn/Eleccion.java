@@ -35,10 +35,8 @@ public class Eleccion extends AppCompatActivity {
                     findRadioButton(checkedId);
                     startActivity(intent);
                 }
-
             }
         });
-
     }
     private void findRadioButton(int checkedId) {
         switch (checkedId) {
@@ -51,7 +49,6 @@ public class Eleccion extends AppCompatActivity {
             case R.id.rb3:
                 Usuario.cand3++;
                 break;
-
         }
     }
 }
