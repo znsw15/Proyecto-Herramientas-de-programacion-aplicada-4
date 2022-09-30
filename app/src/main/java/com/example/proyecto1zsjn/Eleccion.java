@@ -15,6 +15,7 @@ public class Eleccion extends AppCompatActivity {
     RadioGroup  radioGroup;
     Button botonVoto;
     RadioButton rb1, rb2, rb3;
+    static int cand1, cand2, cand3;
 
 
     @Override
@@ -27,14 +28,6 @@ public class Eleccion extends AppCompatActivity {
         rb1 = findViewById(R.id.rb1);
         rb2 = findViewById(R.id.rb2);
         rb3 = findViewById(R.id.rb3);
-
-       /* radioGroup.clearCheck();
-        radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
-            public void onCheckedChanged(RadioGroup grupo, int id){
-                RadioButton rb = (RadioButton)grupo.findViewById(id);
-
-            }
-        });*/
 
 
         botonVoto.setOnClickListener(new View.OnClickListener() {

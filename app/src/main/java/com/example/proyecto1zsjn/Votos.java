@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import java.text.DecimalFormat;
 
 public class Votos extends AppCompatActivity {
 
@@ -24,17 +25,11 @@ public class Votos extends AppCompatActivity {
         tv2 = findViewById(R.id.tvres2);
         tv3 = findViewById(R.id.tvres3);
         btn1 = findViewById(R.id.btn1);
+        DecimalFormat df = new DecimalFormat(".00");
 
-
-        Intent intent = getIntent();
-        Usuario.cand1 = intent.getIntExtra("cand1", 0);
-        Usuario.cand2  = intent.getIntExtra("cand2", 0);
-        Usuario.cand3 = intent.getIntExtra("cand3", 0);
-
-
-        tv1.setText(" " + (Usuario.cand1/39)*100 + "%");
-        tv2.setText(" " + (Usuario.cand2/39)*100 + "%");
-        tv3.setText(" " + (Usuario.cand3/39)*100 + "%");
+        tv1.setText("= "+df.format((Usuario.cand1 /39) * 100) + "%");
+        tv2.setText("= "+df.format((Usuario.cand2 /39) * 100) + "%");
+        tv3.setText("= "+df.format((Usuario.cand3 /39) * 100) + "%");
 
         btn1.setOnClickListener(new View.OnClickListener() {
             @Override
