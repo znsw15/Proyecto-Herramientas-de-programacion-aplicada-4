@@ -32,9 +32,9 @@ public class Votos extends AppCompatActivity {
         Usuario.cand3 = intent.getIntExtra("cand3", 0);
 
 
-        tv1.setText("Votos: " + (Usuario.cand1/39)*100);
-        tv2.setText("Votos: " + (Usuario.cand2/39)*100);
-        tv3.setText("Votos: " + (Usuario.cand3/39)*100);
+        tv1.setText(" " + (Usuario.cand1/39)*100 + "%");
+        tv2.setText(" " + (Usuario.cand2/39)*100 + "%");
+        tv3.setText(" " + (Usuario.cand3/39)*100 + "%");
 
         btn1.setOnClickListener(new View.OnClickListener() {
             @Override
