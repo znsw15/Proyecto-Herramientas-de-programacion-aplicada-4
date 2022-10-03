@@ -13,7 +13,7 @@ public class Votos extends AppCompatActivity {
 
     TextView tv1;
     TextView tv2;
-    TextView tv3;
+    TextView tv3, tv4;
     Button btn1;
 
     @Override
@@ -24,12 +24,14 @@ public class Votos extends AppCompatActivity {
         tv1 = findViewById(R.id.tvres1);
         tv2 = findViewById(R.id.tvres2);
         tv3 = findViewById(R.id.tvres3);
+        tv4 = findViewById(R.id.tvres4);
         btn1 = findViewById(R.id.btn1);
         DecimalFormat df = new DecimalFormat(".00");
 
         tv1.setText("= "+df.format((Usuario.cand1 /39) * 100) + "%");
         tv2.setText("= "+df.format((Usuario.cand2 /39) * 100) + "%");
         tv3.setText("= "+df.format((Usuario.cand3 /39) * 100) + "%");
+        tv4.setText("= "+df.format((Usuario.cand4 /39) * 100) + "%");
 
         btn1.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -14,8 +14,8 @@ import android.widget.RadioButton;
 public class Eleccion extends AppCompatActivity {
     RadioGroup  radioGroup;
     Button botonVoto;
-    RadioButton rb1, rb2, rb3;
-    static int cand1, cand2, cand3;
+    RadioButton rb1, rb2, rb3, rb4;
+    static int cand1, cand2, cand3, cand4;
 
 
     @Override
@@ -28,6 +28,7 @@ public class Eleccion extends AppCompatActivity {
         rb1 = findViewById(R.id.rb1);
         rb2 = findViewById(R.id.rb2);
         rb3 = findViewById(R.id.rb3);
+        rb4 = findViewById(R.id.rb4);
 
 
         botonVoto.setOnClickListener(new View.OnClickListener() {
@@ -50,6 +51,12 @@ public class Eleccion extends AppCompatActivity {
                     Usuario.cand3 =  Usuario.cand3 + 1;
                     Intent intent = new Intent(getApplicationContext(), Votos.class);
                     intent.putExtra("cand1", Usuario.cand3);
+                    startActivity(intent);
+                }
+                if (rb4.isChecked() == true) {
+                    Usuario.cand4 =  Usuario.cand4 + 1;
+                    Intent intent = new Intent(getApplicationContext(), Votos.class);
+                    intent.putExtra("cand4", Usuario.cand4);
                     startActivity(intent);
                 }
 
